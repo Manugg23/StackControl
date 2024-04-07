@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block contenido %}
+
+<main class="container">
+    <div class="row">
+        <div class="col-12">
+        </div>
+        <div class="col-md-4 offset-md-4">            
+            <form action="{% url 'login' %}" method="POST" class="card mt-5 mb-5">
+                {% csrf_token %}
+                {{error}}
+                <h1 class="titulo">Iniciar Sesión</h1>
+                <div class="card-body">
+                  <div class="form-group mt-3">
+                    <label for="username">Nombre de usuario:</label>
+                    <input class="form-control" name="username" autocomplete="username" id="username" type="text" placeholder="Ingrese su usuario" required>
+                  </div>
+  
+                  <div class="form-group mt-3">
+                    <label for="id_password">Contraseña:</label>
+                    <input class="form-control" name="password" id="id_password" type="password" placeholder="Ingrese su contraseña" required>
+                  </div>
+                  <div class="">
+                        <button class="btn btn-dark mt-3" style="width: 100%;">Iniciar Sesión</button>
+                  </div>
+                </div>
+              </form>
+        </div>
+    </div>
+
+</main>
+
+
+
+{% endblock contenido %}
+    

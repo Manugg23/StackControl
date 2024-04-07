@@ -1,0 +1,34 @@
+.titulo{
+    margin-top:20px;
+    font-family: "Nunito", sans-serif;
+    color: #102B3F;
+    font-weight: bold;
+    text-align: center;
+    font-size: 54px;
+}
+.eslogan{
+    font-size: 20px;
+    text-align: center;
+    color: #fff;
+
+}
+.fondo{
+    background-color: #7798AB;
+}
+.separador{
+    height: 250px;
+}
+.tabla-estilo{
+    box-shadow: 4px 4px 4px #444;
+}
+
+.sobre-pagina{
+    font-size: 44px;
+    font-weight:bold;
+    color: #102B3F;
+    text-align: center;
+}
+.sobre-pagina_texto{
+    text-align: center;
+    color: #fff;
+}

@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contenido %}
+<main class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="titulo">AGREGAR PRODUCTO</h1>
+        </div>
+        <div class="col-12">
+          <p class="eslogan">
+            Por favor complete los campos para agregar el producto.
+          </p>
+        </div>
+    <div class="row">
+        <div class="col-12">
+        </div>
+        <div class="col-md-4 offset-md-4">            
+            <form action="/producto/agregar/" method="POST" class="card mt-5 mb-5">
+                {% csrf_token %}
+                {{error}}
+                <div class="card-body">
+                  <div class="form-group mt-3">
+                    <label for="id_nombre">Nombre:</label>
+                    <input class="form-control"type="text"  name="nombre" maxlength="50" required id="id_nombre">
+                  </div>
+                  <div class="form-group mt-3">
+                    <label for="id_precio">Precio:</label>
+                    <input class="form-control" type="number" min="0" step="0.01" name="precio" maxlength="50" required="" id="id_precio">
+                  </div>
+                  <div class="form-group mt-3">
+                    <label for="id_stock">Stock:</label>
+                    <input class="form-control" type="number"  min="0" name="stock_actual" required="" id="id_stock">
+                  </div>
+                  <div class="form-group mt-3">
+                    <label for="id_proveedor">Proveedor:</label>
+                    <select class="form-control" name="proveedor" required="" id="id_proveedor">
+                        <option value="" selected="">Seleccionar una opción.</option>
+                        {% for p in proveedores  %}
+                        <option value="{{p.id}}">{{p.apellido}}, {{p.nombre}}.</option>
+                        {% endfor %}
+                    </select>
+                  </div>
+                  <div class="">
+                        <button class="btn btn-success mt-3" style="width: 100%;">Agregar producto</button>
+                  </div>
+                </div>
+              </form>
+        </div>
+    </div>
+</main>
+
+{% endblock contenido %}
+

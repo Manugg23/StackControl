@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contenido %}
+<main class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="titulo">ACTUALIZAR PRODUCTO</h1>
+        </div>
+    <div class="row">
+        <div class="col-12">
+        </div>
+        <div class="col-md-4 offset-md-4">            
+            <form method="POST" class="card mt-5 mb-5">
+                {% csrf_token %}
+                {{error}}
+                <div class="card-body">
+                    <div class="form-group mt-3">
+                        <label for="id_nombre">Nombre:</label>
+                        <input class="form-control"type="text" name="nombre" value="{{producto.nombre}}" maxlength="50" required id="id_nombre">
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="id_precio">Precio:</label>
+                        <input class="form-control"  value="{{producto.precio}}"type="number" step="0.01" min="0" name="precio" maxlength="50" required="" id="id_precio">
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="id_stock">Stock:</label>
+                        <input class="form-control" type="number"
+                    value="{{producto.stock_actual}}" min="0" name="stock_actual" required="" id="id_stock">
+                </div>
+                <div class="form-group mt-3">
+                    <label for="id_proveedor">Proveedor:</label>
+                    <select class="form-control" name="proveedor" required="" id="id_proveedor">
+                        <option value="" selected="">Seleccionar una opción.</option>
+                        {% for p in proveedores  %}
+                            {% if producto.proveedor.id == p.id %}
+                            <option selected value="{{p.id}}">{{p.apellido}}, {{p.nombre}}.</option>
+                            {% else %}
+                            <option value="{{p.id}}">{{p.apellido}}, {{p.nombre}}.</option>
+                            {% endif %}
+
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="">
+                    <button class="btn btn-warning mt-3" style="width: 100%;">Actualizar producto</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+
+{% endblock contenido %}
+
