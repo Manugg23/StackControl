@@ -1,34 +1,38 @@
-.titulo{
-    margin-top:20px;
+.titulo {
+    margin-top: 20px;
     font-family: "Nunito", sans-serif;
-    color: #102B3F;
+    color: #102b3f;
     font-weight: bold;
     text-align: center;
     font-size: 54px;
 }
-.eslogan{
+
+.eslogan {
     font-size: 20px;
     text-align: center;
     color: #fff;
+}
 
+.fondo {
+    background-color: #7798ab;
 }
-.fondo{
-    background-color: #7798AB;
-}
-.separador{
+
+.separador {
     height: 250px;
 }
-.tabla-estilo{
+
+.tabla-estilo {
     box-shadow: 4px 4px 4px #444;
 }
 
-.sobre-pagina{
+.sobre-pagina {
     font-size: 44px;
-    font-weight:bold;
-    color: #102B3F;
+    font-weight: bold;
+    color: #102b3f;
     text-align: center;
 }
-.sobre-pagina_texto{
+
+.sobre-pagina_texto {
     text-align: center;
     color: #fff;
 }
